@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MUBB Store — Vista previa</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#fff;color:#111;font-family:Montserrat,system-ui,sans-serif}
+header{display:flex;align-items:center;justify-content:space-between;padding:20px 32px;background:#000}
+header img{height:26px}
+nav a{color:#eee;text-decoration:none;font-size:11px;letter-spacing:.1em;text-transform:uppercase;margin-left:24px}
+.hero{position:relative;height:60vh;min-height:380px;background:#111}
+.hero img{width:100%;height:100%;object-fit:cover;opacity:.7}
+.hero .txt{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:#fff}
+.hero h1{font-weight:300;font-size:clamp(1.8rem,4vw,2.8rem);letter-spacing:.06em;text-transform:uppercase;margin:0 0 10px}
+.hero p{color:#ddd;font-size:13px;letter-spacing:.05em;text-transform:uppercase}
+section{max-width:1200px;margin:0 auto;padding:60px 32px}
+h2{font-weight:300;font-size:clamp(1.3rem,2.4vw,1.9rem);letter-spacing:.06em;text-transform:uppercase;text-align:center;margin:0 0 8px}
+.sub{text-align:center;color:#777;font-size:12px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:40px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.card img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block;background:#f4f4f4}
+.card .cap{padding:14px 2px 4px;font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:#111}
+.card .price{font-weight:600;font-size:13px;margin:2px 0 10px}
+.card .stock{font-size:11px;color:#2e7d32;margin-bottom:8px}
+.card button{width:100%;background:#000;color:#fff;border:0;padding:11px;font-size:11px;letter-spacing:.08em;text-transform:uppercase;cursor:pointer}
+.tag{display:inline-block;background:#000;color:#fff;font-size:10px;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;margin-bottom:22px}
+footer{border-top:1px solid #eee;padding:26px 32px;text-align:center;color:#999;font-size:11px;background:#000;color:#888}
+.note{max-width:1200px;margin:0 auto;padding:14px 32px;color:#999;font-size:12px;background:#fafafa;border-top:1px solid #eee}
+@media (max-width:760px){.grid{grid-template-columns:repeat(2,1fr)}}
+</style></head><body>
+
+<header>
+  <img src="img/logo.png" alt="MUBB">
+  <nav><a href="#">Productos</a><a href="#">Sobre nosotros</a><a href="#">Ubicaciones</a><a href="#" style="color:#fff">Tienda</a></nav>
+</header>
+
+<div class="hero">
+  <img src="img/hero.jpg" alt="MUBB">
+  <div class="txt"><h1>La tienda MUBB</h1><p>Piezas disponibles para compra inmediata</p></div>
+</div>
+
+<section>
+  <div style="text-align:center"><span class="tag">Nuevo · Disponible en stock</span></div>
+  <h2>Catálogo</h2>
+  <div class="sub">mubb.store/tienda</div>
+  <div class="grid">
+    <div class="card"><img src="img/p1.jpg" alt="Sofá Bollek"><div class="cap">Sofá Bollek</div><div class="price">$ 2,850</div><div class="stock">● En stock — 3 disponibles</div><button>Agregar al carrito</button></div>
+    <div class="card"><img src="img/p2.jpg" alt="Sofá Bosek"><div class="cap">Sofá Bosek</div><div class="price">$ 3,100</div><div class="stock">● En stock — 2 disponibles</div><button>Agregar al carrito</button></div>
+    <div class="card"><img src="img/p3.jpg" alt="Sofá Cama Linee"><div class="cap">Sofá Cama Linee</div><div class="price">$ 2,450</div><div class="stock">● En stock — 5 disponibles</div><button>Agregar al carrito</button></div>
+    <div class="card"><img src="img/p4.jpg" alt="Sofá Gravity"><div class="cap">Sofá Gravity</div><div class="price">$ 3,600</div><div class="stock">● En stock — 1 disponible</div><button>Agregar al carrito</button></div>
+    <div class="card"><img src="img/p5.jpg" alt="Sofá Burnin"><div class="cap">Sofá Burnin</div><div class="price">$ 4,200</div><div class="stock">● En stock — 2 disponibles</div><button>Agregar al carrito</button></div>
+    <div class="card"><img src="img/p6.jpg" alt="Consola Infinity"><div class="cap">Consola Infinity</div><div class="price">$ 1,950</div><div class="stock">● En stock — 4 disponibles</div><button>Agregar al carrito</button></div>
+  </div>
+</section>
+
+<footer>© MUBB · Quito · Manta · Guayaquil</footer>
+<p class="note">Vista previa de alta fidelidad: header, logo y fotografía de producto son reales, tomados del sitio actual mubb.store. Precios y stock son ilustrativos (placeholder) para mostrar cómo se vería el carrito, el stock y el botón de compra — la funcionalidad real de carrito, checkout y pago se construye en la Etapa 2.</p>
+</body></html>
