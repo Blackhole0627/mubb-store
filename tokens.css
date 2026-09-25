@@ -1,0 +1,26 @@
+/* MUBB Store design tokens — copied from the existing WordPress site (mubb.store).
+   Values marked VERIFY come from the site's CSS and must be confirmed against screenshots. */
+:root {
+  --color-bg: #ffffff;
+  --color-text: #000000;
+  --color-surface: #efefef;    /* VERIFY */
+  --color-line: #ced3d5;       /* VERIFY */
+  --color-muted: #878787;      /* VERIFY */
+  --color-accent: #000000;
+  --color-accent-contrast: #ffffff;
+  --color-danger: #d63637;
+  --color-success: #2e7d32;
+
+  --font-display: "Montserrat", system-ui, sans-serif;   /* site uses Montserrat as main */
+  --font-body: "Montserrat", system-ui, sans-serif;
+  --fs-xs: .75rem; --fs-sm: .875rem; --fs-md: 1rem; --fs-lg: 1.25rem; --fs-xl: clamp(1.5rem, 2.5vw, 2.25rem);
+  --lh-body: 1.6;
+
+  --s-1: .5rem; --s-2: 1rem; --s-3: 1.5rem; --s-4: 2rem; --s-6: 3rem; --s-8: 4rem;
+  --gutter: clamp(1rem, 4vw, 3rem);
+  --max-width: 1440px;
+  --radius: 0;
+  --img-ratio-card: 3 / 4;
+  --ease: cubic-bezier(.22, .61, .36, 1);
+  --dur-fast: 200ms; --dur: 500ms;
+}

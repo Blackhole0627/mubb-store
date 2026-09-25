@@ -1,0 +1,184 @@
+.elementor-kit-6{--e-global-color-primary:#6EC1E4;--e-global-color-secondary:#54595F;--e-global-color-text:#7A7A7A;--e-global-color-accent:#61CE70;--e-global-typography-primary-font-family:"Roboto";--e-global-typography-primary-font-weight:600;--e-global-typography-secondary-font-family:"Roboto Slab";--e-global-typography-secondary-font-weight:400;--e-global-typography-text-font-family:"Roboto";--e-global-typography-text-font-weight:400;--e-global-typography-accent-font-family:"Roboto";--e-global-typography-accent-font-weight:500;}.elementor-kit-6 img:hover{filter:brightness( 100% ) contrast( 100% ) saturate( 100% ) blur( 0px ) hue-rotate( 0deg );}.elementor-section.elementor-section-boxed > .elementor-container{max-width:1240px;}.e-con{--container-max-width:1240px;}.elementor-widget:not(:last-child){margin-block-end:20px;}.elementor-element{--widgets-spacing:20px 20px;}{}h1.entry-title{display:var(--page-title-display);}.elementor-lightbox{background-color:#FFFFFFC4;--lightbox-ui-color:#FFFFFFDE;--lightbox-ui-color-hover:#FFFFFF;--lightbox-text-color:#FFFFFF00;--lightbox-header-icons-size:36px;--lightbox-navigation-icons-size:0px;}.elementor-kit-6 e-page-transition{background-color:#FFBC7D;}.site-header .site-branding{flex-direction:column;align-items:stretch;}.site-header{padding-inline-end:0px;padding-inline-start:0px;}.site-footer .site-branding{flex-direction:column;align-items:stretch;}@media(max-width:1180px){.elementor-section.elementor-section-boxed > .elementor-container{max-width:1040px;}.e-con{--container-max-width:1040px;}}@media(max-width:700px){.elementor-section.elementor-section-boxed > .elementor-container{max-width:767px;}.e-con{--container-max-width:767px;}}/* Start custom CSS */.tooltip-container {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip {
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    background-color: #00FF0000;
+    border: 0px solid #ccc;
+    box-shadow: 0 0px 0x rgba(0,0,0,0.2);
+    padding: 10px;
+    z-index: 9999;
+    top: 50%;
+    left: -260px;
+    transform: translateY(-50%);
+    white-space: nowrap;
+    transition: opacity 0.3s ease-in-out, visibility 0s linear 0.4s; /* Transición para visibilidad y opacidad */
+}
+
+.tooltip img {
+    max-width: 220px;
+    height: auto;
+}
+
+.image-trigger:hover + .tooltip {
+    visibility: visible;
+    opacity: 1;
+    transition-delay: 0.4s; /* Retraso de 2 segundos */
+}
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 768px) {
+    .tooltip {
+        
+        z-index: 9999;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        white-space: normal;
+        
+    }
+
+    .tooltip img {
+        max-width: 95px; /* Ajusta el tamaño según tus necesidades */
+    }
+}
+
+
+.shopengine_add_to_list_action,
+.shopengine_comparison_add_to_list_action {
+    display: none;
+}
+
+/* Eliminar fondo de todas las categorías de variación y opciones de variación */
+.variations_form .variations .value,
+.variations_form .variations .label,
+.variations_form .variations select,
+.shopengine_swatches .swatch {
+    background-color: transparent !important; /* Eliminar el fondo */
+    color: #ccc !important; /* Texto gris claro */
+    border: none !important; /* Sin bordes */
+    text-decoration: none !important; /* Sin subrayado */
+}
+
+/* Variaciones (swatches) - Cambiar color de texto a negro al pasar el ratón */
+.shopengine_swatches .swatch:hover {
+    color: #000 !important; /* Texto negro al hacer hover */
+}
+
+/* Opciones de variación - Cambiar color de texto a negro al pasar el ratón */
+.variations_form .variations select option:hover {
+    color: #000 !important; /* Texto negro en las opciones al hacer hover */
+}
+
+/* Cambiar el color de la opción seleccionada a negro (para select y swatches) */
+.variations_form .variations select option:checked,
+.shopengine_swatches .swatch.selected {
+    color: #000 !important; /* Texto negro en la opción seleccionada */
+}
+
+/* Alinear categorías de variación y opciones en la misma fila */
+.variations_form .variations {
+    display: flex !important; /* Usar Flexbox para alinear en fila */
+    flex-wrap: wrap !important; /* Asegurar que las categorías se ajusten si es necesario */
+    gap: 10px !important; /* Espacio entre las categorías */
+}
+
+/* Asegurar que las categorías de variación y opciones de variación se alineen bien */
+.variations_form .variations .label,
+.variations_form .variations .value,
+.shopengine_swatches .swatch,
+.variations_form .variations select {
+    display: inline-block !important; /* Forzar que los elementos se alineen en línea */
+    max-height: 25px !important; /* Limitar la altura a 15px */
+    overflow: hidden !important; /* Ocultar cualquier contenido que exceda los 15px */
+    line-height: 15px !important; /* Asegurar que el texto no se extienda más allá de 15px */
+    padding: 0 !important; /* Eliminar cualquier padding extra */
+    vertical-align: middle !important; /* Asegura que los elementos se alineen verticalmente */
+    width: auto !important; /* Permitir que los elementos tengan un ancho flexible */
+}
+
+/* Cambiar color de texto de las categorías (labels) a negro */
+.variations_form .variations .label {
+    color: #000 !important; /* Nombre de la categoría en negro */
+    font-weight: normal !important; /* Quitar negrita */
+    font-size: inherit !important; /* Usar el mismo tamaño de fuente que el texto normal */
+    font-family: inherit !important; /* Usar la misma familia de fuente que el texto normal */
+}
+
+/* Añadir espacio de 15px a la derecha de cada categoría */
+.variations_form .variations .label {
+    margin-right: 15px !important; /* Añadir espacio a la derecha del nombre de la categoría */
+}
+
+/* Limitar la altura de las opciones de variación (select y swatches) */
+.variations_form .variations select {
+    font-size: 0.8em !important; /* Reducir el tamaño del texto si es necesario */
+}
+
+/* Cambiar el color del botón "Añadir al carrito" cuando no está activo */
+button.single_add_to_cart_button:disabled,
+button.single_add_to_cart_button[disabled] {
+    background-color: #ccc !important; /* Gris claro */
+    color: #333 !important; /* Texto oscuro para visibilidad */
+    border: 1px solid #ccc !important; /* Borde gris claro */
+}
+
+/* Cambiar el color del botón "Añadir al carrito" cuando está activo */
+button.single_add_to_cart_button {
+    background-color: #000 !important; /* Negro cuando el producto está listo para ser añadido */
+    color: #fff !important; /* Texto blanco */
+}
+
+/* Cambiar el color del botón de "Añadir al carrito" cuando el mouse pasa por encima (hover) */
+button.single_add_to_cart_button:hover {
+    background-color: #333 !important; /* Gris oscuro cuando el mouse pasa por encima */
+}
+
+#CART-DEPLOY {
+    display: inline-block;
+    padding: 5px 15px; /* 5px en top y bottom, 15px en left y right */
+    background-color: #d3d3d3 !important; /* Fondo gris claro */
+    color: black !important; /* Texto negro */
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif; /* Fuente Montserrat Regular */
+    font-weight: normal; /* Regular */
+    text-align: center;
+    border-radius: 55px !important; /* Bordes redondeados con radio de 55px */
+    text-decoration: none !important; /* Elimina el subrayado */
+    cursor: pointer; /* Mano al pasar el mouse */
+    transition: background-color 0.3s, color 0.3s; /* Efecto de transición */
+    width: auto; /* Asegura que el ancho se ajuste al contenido */
+    max-width: 250px; /* Establece un ancho máximo para evitar que ocupe toda la sección */
+    white-space: nowrap; /* Impide que el texto se divida en varias líneas */
+}
+
+#CART-DEPLOY:hover {
+    background-color: #000000 !important; /* Fondo negro en hover */
+    color: white !important; /* Texto blanco en hover */
+}
+
+#CART-DEPLOY:active {
+    background-color: #000000 !important; /* Fondo negro al hacer clic */
+    color: white !important; /* Texto blanco al hacer clic */
+    transform: scale(0.98); /* Efecto visual al hacer clic (reducción del tamaño) */
+}
+
+/* Asegurarse de que el texto no se subraye, incluso si es un enlace */
+#CART-DEPLOY a {
+    text-decoration: none !important;
+    color: inherit !important;
+}
+
+/* Cuando se añade la clase .hidden-button, el botón se vuelve invisible */
+#CART-DEPLOY.hidden-button {
+    opacity: 0;
+    pointer-events: none; /* Desactiva la interacción con el botón */
+    transition: opacity 0.3s ease; /* Transición suave */
+}
+
+html, body {
+  overflow-x: hidden;
+}/* End custom CSS */

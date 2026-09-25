@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MUBB Store Wireframes</title>
+<link rel="stylesheet" href="../shared/wireframe.css"><style>.dev .body > .bar:first-child{background:#000;color:#fff;border:0}.dev .body > .bar:first-child .links{color:#ddd}.card .cap{text-transform:uppercase;font-size:12px;letter-spacing:.02em}</style></head><body>
+<header class="doc"><h1>MUBB Store — Wireframes (Step 1)</h1>
+<p>mubb.store/tienda · low fidelity, grayscale · header and footer copy the existing WordPress site · desktop and mobile</p></header>
+<nav class="toc"><a href="#catalog">Catalog</a><a href="#product">Product</a><a href="#cart">Cart</a><a href="#checkout">Checkout</a><a href="#result">Result pages</a><a href="#order">Order status</a><a href="#flow">Flow</a></nav>
+
+<section class="page" id="catalog"><h2>1. Catalog / category</h2>
+<p class="note">Large images, generous white space, no discount badges. Filters on the left (desktop) and in a drawer (mobile). "In stock only" is on by default because this store sells only in-stock items.</p>
+<div class="row">
+<div class="dev desktop"><div class="label">Desktop</div><div class="body">
+<div class="bar"><span>MUBB</span><span class="links"><span>Home</span><span>Products</span><span>About</span><span>Locations</span><span>Mubb Design</span></span><span>ES|EN &nbsp; Cart (0)</span></div>
+<div class="pad"><h3 class="t">Salas › Sofás</h3><span class="chip">Sort: Featured ▾</span>
+<div class="side" style="margin-top:12px"><div>
+<h4 class="t">Category</h4><div>Sofás<br>Poltronas<br>Mesas de centro<br>Consolas</div><div class="hr"></div>
+<h4 class="t">Price</h4><div class="field">$ min — $ max</div>
+<h4 class="t">Material</h4><div>☐ Cuero ☐ Tela ☐ Madera</div><div class="hr"></div>
+<h4 class="t">Color</h4><span class="dot"></span><span class="dot"></span><span class="dot"></span><div class="hr"></div>☑ In stock only</div>
+<div><div class="grid g3">
+<div class="card"><div class="ph tall">Photo</div><div class="cap">Name<div class="price">$ 3,200</div></div></div>
+<div class="card"><div class="ph tall">Photo</div><div class="cap">Name<div class="price">$ 2,800</div></div></div>
+<div class="card"><div class="ph tall">Photo</div><div class="cap">Name<div class="price">$ 4,500</div></div></div>
+<div class="card"><div class="ph tall">Photo</div><div class="cap">Name<div class="price">$ 3,900</div></div></div>
+<div class="card"><div class="ph tall">Photo</div><div class="cap">Name<div class="price">$ 5,100</div></div></div>
+<div class="card"><div class="ph tall">Photo</div><div class="cap">Name<div class="price">$ 2,450</div></div></div></div>
+<p style="text-align:center"><span class="btn o">Load more</span></p></div></div></div>
+<div class="bar" style="border-top:1px solid var(--line)"><span>Footer: showrooms · policies · contact · social</span></div></div></div>
+<div class="dev mobile"><div class="label">Mobile</div><div class="body">
+<div class="bar"><span>☰</span><span>MUBB</span><span>Cart (0)</span></div>
+<div class="pad"><h3 class="t">Sofás</h3><div style="display:flex;gap:8px"><span class="chip">Filter</span><span class="chip">Sort ▾</span></div>
+<div class="grid g2" style="margin-top:10px"><div class="card"><div class="ph tall">Photo</div><div class="cap">Name<div class="price">$ 3,200</div></div></div><div class="card"><div class="ph tall">Photo</div><div class="cap">Name<div class="price">$ 2,800</div></div></div><div class="card"><div class="ph tall">Photo</div><div class="cap">Name<div class="price">$ 4,500</div></div></div><div class="card"><div class="ph tall">Photo</div><div class="cap">Name<div class="price">$ 3,900</div></div></div></div></div></div></div>
+</div></section>
+
+<section class="page" id="product"><h2>2. Product page</h2>
+<p class="note">Gallery leads. Variant options (color, measure, finish) update price, stock, and photos. Showroom pickup is shown next to delivery. Materials and care are tabs so the top of the page stays clean.</p>
+<div class="row">
+<div class="dev desktop"><div class="label">Desktop</div><div class="body">
+<div class="bar"><span>MUBB</span><span class="links"><span>Home</span><span>Products</span><span>About</span></span><span>Cart (1)</span></div>
+<div class="pad"><div class="split">
+<div><div class="ph h5">Main photo (zoom)</div><div class="grid g4" style="margin-top:10px"><div class="ph sq">1</div><div class="ph sq">2</div><div class="ph sq">3</div><div class="ph sq">4</div></div></div>
+<div class="stack"><div>Salas › Sofás</div><h3 class="t" style="font-size:20px">Product name</h3><div style="font-size:18px;font-weight:600">$ 3,200</div><div>● In stock — 4 available</div>
+<div><h4 class="t">Color</h4><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+<div><h4 class="t">Measure</h4><span class="chip">2.0 m</span><span class="chip">2.4 m</span><span class="chip">2.8 m</span></div>
+<div><h4 class="t">Finish</h4><span class="chip">Matte</span><span class="chip">Gloss</span></div>
+<div style="display:flex;gap:10px"><span class="field" style="width:90px">− 1 +</span><span class="btn" style="flex:1">Add to cart</span></div>
+<div class="field">Delivery: Quito 2–4 days, from $ 40 · Pickup at showroom: free</div></div></div>
+<div class="hr"></div><h4 class="t">Description · Materials and finishes · Dimensions · Care</h4><div class="txt"></div><div class="txt m"></div><div class="txt s"></div>
+<div class="hr"></div><h4 class="t">You may also like</h4><div class="grid g4"><div class="ph tall">Photo</div><div class="ph tall">Photo</div><div class="ph tall">Photo</div><div class="ph tall">Photo</div></div></div></div></div>
+<div class="dev mobile"><div class="label">Mobile</div><div class="body">
+<div class="bar"><span>☰</span><span>MUBB</span><span>Cart (1)</span></div>
+<div class="ph h5">Photo (swipe) ● ○ ○ ○</div>
+<div class="pad stack"><h3 class="t">Product name</h3><div style="font-weight:600">$ 3,200</div><div>● In stock — 4 available</div>
+<div><h4 class="t">Color</h4><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+<div><h4 class="t">Measure</h4><span class="chip">2.0 m</span><span class="chip">2.4 m</span></div>
+<div class="txt"></div><div class="txt m"></div></div>
+<div class="sticky-m"><span class="btn full">Add to cart · $ 3,200</span></div></div></div>
+</div></section>
+
+<section class="page" id="cart"><h2>3. Cart</h2>
+<p class="note">Desktop: full page. Mobile and everywhere else: a slide-in drawer from the header for quick edits, with "Go to cart" and "Checkout" buttons.</p>
+<div class="row">
+<div class="dev desktop"><div class="label">Desktop</div><div class="body">
+<div class="bar"><span>MUBB</span><span>Cart (2)</span></div>
+<div class="pad"><h3 class="t">Your cart</h3><div class="side" style="grid-template-columns:1fr 300px">
+<div class="stack">
+<div style="display:grid;grid-template-columns:90px 1fr 90px 80px;gap:12px;align-items:center"><div class="ph sq">img</div><div>Product name<br><span style="color:var(--mute)">Beige · 2.4 m</span><br>Remove</div><span class="field">− 1 +</span><b>$ 3,200</b></div>
+<div style="display:grid;grid-template-columns:90px 1fr 90px 80px;gap:12px;align-items:center"><div class="ph sq">img</div><div>Product name<br><span style="color:var(--mute)">Black</span><br>Remove</div><span class="field">− 2 +</span><b>$ 640</b></div></div>
+<div class="field" style="padding:16px"><div>Subtotal <b style="float:right">$ 3,840</b></div><div>Shipping <span style="float:right">calculated at checkout</span></div><div class="hr"></div><div>Total <b style="float:right">$ 3,840</b></div><br><span class="btn full">Checkout</span><p style="margin:8px 0 0;color:var(--mute)">Low-stock warning shown here if an item drops below the quantity chosen.</p></div></div></div></div></div>
+<div class="dev mobile"><div class="label">Mobile drawer</div><div class="body"><div class="pad stack"><b>Cart (2) ✕</b>
+<div style="display:grid;grid-template-columns:70px 1fr;gap:10px"><div class="ph sq">img</div><div>Product name<br>Beige · 2.4 m<br>− 1 + · $ 3,200</div></div>
+<div style="display:grid;grid-template-columns:70px 1fr;gap:10px"><div class="ph sq">img</div><div>Product name<br>Black<br>− 2 + · $ 640</div></div>
+<div class="hr"></div><div>Subtotal <b style="float:right">$ 3,840</b></div><span class="btn full">Checkout</span><span class="btn o full">View cart</span></div></div></div>
+</div></section>
+
+<section class="page" id="checkout"><h2>4. Checkout (single page)</h2>
+<p class="note">One page, three blocks, no account needed. Choosing "Pickup" hides the address and shows the showroom list. Ecuador specifics: RUC or cédula field for invoicing, provinces list for shipping zones. The order total updates when the zone changes.</p>
+<div class="row">
+<div class="dev desktop"><div class="label">Desktop</div><div class="body">
+<div class="bar"><span>MUBB</span><span>Secure checkout</span></div>
+<div class="pad"><div class="side" style="grid-template-columns:1fr 320px"><div class="stack">
+<div><h3 class="t">1. Contact and delivery</h3><div class="field">Email</div><div class="field">Full name</div><div class="field">Phone</div>
+<div>◉ Delivery &nbsp; ○ Pick up at showroom (Quito · Cumbayá · Manta · Samborondón)</div><br>
+<div class="grid g2"><div class="field">Province ▾</div><div class="field">City</div></div><div class="field">Address</div><div class="field">Notes</div></div>
+<div><h3 class="t">2. Billing</h3><div class="field">☑ Same as delivery</div><div class="grid g2"><div class="field">Document type ▾ (RUC / Cédula)</div><div class="field">Number</div></div><div class="field">Name / company</div></div>
+<div><h3 class="t">3. Payment</h3><div class="field">◉ Datafast — credit / debit card</div><div class="field">○ Kushki — card</div><div class="field" style="color:#aaa">○ PayPal (added later, hidden until enabled)</div>
+<span class="btn full">Pay $ 3,880</span></div></div>
+<div class="field" style="height:fit-content"><b>Order summary</b><div class="hr"></div>Product × 1 <span style="float:right">$ 3,200</span><br>Product × 2 <span style="float:right">$ 640</span><br>Shipping (Quito) <span style="float:right">$ 40</span><div class="hr"></div><b>Total <span style="float:right">$ 3,880</span></b></div></div></div></div></div>
+<div class="dev mobile"><div class="label">Mobile</div><div class="body"><div class="pad stack"><b>Order summary ▾ $ 3,880</b>
+<div class="field">Email</div><div class="field">Full name</div><div class="field">◉ Delivery ○ Pickup</div><div class="field">Province ▾</div><div class="field">Address</div>
+<b>Billing</b><div class="field">RUC / Cédula</div><b>Payment</b><div class="field">◉ Datafast</div><div class="field">○ Kushki</div></div><div class="sticky-m"><span class="btn full">Pay $ 3,880</span></div></div></div>
+</div></section>
+
+<section class="page" id="result"><h2>5. Payment result pages</h2>
+<p class="note">Three states, one layout. The state comes from the gateway webhook, not from the browser redirect, so a closed tab cannot lose an order.</p>
+<div class="row">
+<div class="dev" style="width:290px"><div class="label">Approved</div><div class="pad stack"><h3 class="t">Thank you</h3><div>Order MUBB-000123 confirmed. We sent the details to your email.</div><div class="txt"></div><div class="txt m"></div><span class="btn full">Continue shopping</span></div></div>
+<div class="dev" style="width:290px"><div class="label">Rejected</div><div class="pad stack"><h3 class="t">Payment not completed</h3><div>Your card was declined. No charge was made and your cart is saved.</div><span class="btn full">Try again</span><span class="btn o full">Use another method</span></div></div>
+<div class="dev" style="width:290px"><div class="label">Pending</div><div class="pad stack"><h3 class="t">Payment pending</h3><div>We are waiting for the bank to confirm. You will get an email when it is done. Stock is held for 30 minutes.</div><span class="btn o full">Check status</span></div></div>
+</div></section>
+
+<section class="page" id="order"><h2>6. Order status (link from email)</h2>
+<p class="note">Customer opens the link from the email. No login. Shows the status timeline and items.</p>
+<div class="dev" style="width:420px"><div class="label">Order MUBB-000123</div><div class="pad stack"><div>● Paid → ○ Shipped → ○ Delivered</div><div class="hr"></div><div>Items, address or pickup showroom, payment method, total</div><span class="btn o full">Contact us on WhatsApp</span></div></div></section>
+
+<section class="page" id="flow"><h2>7. Purchase flow and emails</h2>
+<div class="dev desktop" style="width:100%"><div class="pad">Catalog → Product → Add to cart → Cart → Checkout → Gateway (Datafast / Kushki) → Result page<br><br>
+<span class="tag">email 1</span>Order placed (customer + MUBB) &nbsp; <span class="tag">email 2</span>Payment confirmed &nbsp; <span class="tag">email 3</span>Status changed: shipped / delivered<br><br>
+<span class="tag">stock</span>Held at checkout start (30 min) → decremented when paid → released if rejected or expired → low-stock alert email to MUBB</div></div>
+<div class="ann"><b>Admin panel (not drawn here, standard CMS screens):</b> Products and variants, stock, photos, categories · Orders list with filters, status change, customer and payment details, CSV export · Shipping zones and prices · Showroom pickup points · Policy pages.</div></section>
+</body></html>
