@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tienda — MUBB</title>
+<meta name="description" content="Tienda MUBB: piezas de mobiliario disponibles para compra inmediata. Sofás, mesas, consolas y más.">
+<link rel="stylesheet" href="styles.css">
+</head><body>
+
+<div class="banner">Nuevo · Tienda MUBB — piezas disponibles para compra inmediata</div>
+<header>
+  <div class="topbar">
+    <a href="https://mubb.store/"><img src="img/logo.png" alt="MUBB"></a>
+    <nav class="main">
+      <a href="https://mubb.store/">Inicio</a>
+      <a href="https://mubb.store/catalogo/">Productos</a>
+      <a href="https://mubb.store/sobre-nosotros/">Sobre nosotros</a>
+      <a href="https://mubb.store/ubicaciones/">Ubicaciones</a>
+      <a href="index.html" class="on">Tienda</a>
+    </nav>
+    <div class="hd-right">
+      <span>ESP</span>
+      <a class="cart-link" href="carrito.html">🛒 <span class="cart-count">0</span></a>
+    </div>
+  </div>
+</header>
+
+<section class="subhero">
+  <h1>La tienda MUBB</h1>
+  <p>Piezas seleccionadas, disponibles en stock para entrega inmediata</p>
+</section>
+
+<section class="cat">
+  <div class="pgrid" id="grid"></div>
+</section>
+
+<p class="note-box">Vista previa funcional: el carrito y las cantidades funcionan de verdad (con almacenamiento local del navegador). Los precios y el stock son ilustrativos hasta confirmar el catálogo real. El pago con Datafast/Kushki se conecta en la Etapa 3, junto con las credenciales del banco.</p>
+
+<footer>
+  <div class="flogo">MUBB</div>
+  <div class="rooms">Showroom Quito — Av. Orellana y González Suárez<br>Showroom Manta — Barbasquillo, Vía Umiña Tenis Club<br>Showroom Guayaquil — Moderna Plaza, Samborondón, Local 31</div>
+  <div class="fbottom">© 2026 MUBB. Todos los derechos reservados. · ventas@mubb.store</div>
+</footer>
+
+<script src="store.js"></script>
+<script>
+  const grid = document.getElementById('grid');
+  grid.innerHTML = PRODUCTS.map(p => `
+    <div class="pcard">
+      <a class="imgwrap" href="producto.html?id=${p.id}"><img src="${p.img}" alt="${p.name}"></a>
+      <div class="cat">${p.cat}</div>
+      <div class="name"><a href="producto.html?id=${p.id}" style="text-decoration:none;color:inherit">${p.name}</a></div>
+      <div class="price">${fmt(p.price)}</div>
+      <button onclick="addToCart('${p.id}',1); this.textContent='Agregado ✓'; setTimeout(()=>this.textContent='Agregar al carrito',1400)">Agregar al carrito</button>
+    </div>
+  `).join('');
+</script>
+</body></html>

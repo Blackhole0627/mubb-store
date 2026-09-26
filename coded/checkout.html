@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Checkout — MUBB</title>
+<link rel="stylesheet" href="styles.css">
+</head><body>
+
+<header>
+  <div class="topbar">
+    <a href="https://mubb.store/"><img src="img/logo.png" alt="MUBB"></a>
+    <nav class="main"><a href="index.html">Tienda</a></nav>
+    <div class="hd-right"><span>Checkout seguro</span></div>
+  </div>
+</header>
+
+<div class="co-wrap">
+  <form id="coForm">
+    <h2>1. Contacto y entrega</h2>
+    <label>Nombre completo</label><input type="text" name="nombre" required>
+    <div class="row2">
+      <div><label>Correo electrónico</label><input type="email" name="email" required></div>
+      <div><label>Teléfono</label><input type="text" name="telefono" required></div>
+    </div>
+    <label>Método de entrega</label>
+    <select name="entrega" id="entrega">
+      <option value="Quito|40">Envío a domicilio — Quito ($40)</option>
+      <option value="Guayaquil|40">Envío a domicilio — Guayaquil ($40)</option>
+      <option value="Manta|60">Envío a domicilio — Manta ($60)</option>
+      <option value="pickup|0">Retiro en showroom (gratis)</option>
+    </select>
+    <label>Dirección (si aplica)</label><textarea name="direccion" rows="2"></textarea>
+
+    <h2>2. Facturación</h2>
+    <div class="row2">
+      <div><label>Tipo de documento</label><select name="doctipo"><option>Cédula</option><option>RUC</option></select></div>
+      <div><label>Número de documento</label><input type="text" name="docnum" required></div>
+    </div>
+    <label>Nombre / Razón social para factura</label><input type="text" name="factura">
+
+    <h2>3. Pago</h2>
+    <label class="paymethod"><input type="radio" name="pago" value="Datafast" checked> Datafast — tarjeta de crédito/débito</label>
+    <label class="paymethod"><input type="radio" name="pago" value="Kushki"> Kushki — tarjeta</label>
+    <label class="paymethod disabled"><input type="radio" name="pago" value="PayPal" disabled> PayPal (próximamente)</label>
+    <p style="font-size:11px;color:#888;margin:4px 0 0">Las pasarelas se conectan en la Etapa 3, con las credenciales de producción del banco. Por ahora el botón envía tu pedido por WhatsApp para confirmarlo manualmente.</p>
+
+    <button class="btn-submit" type="submit">Enviar pedido — <span id="submitTotal">$ 0</span></button>
+  </form>
+
+  <div class="co-summary" id="summary"></div>
+</div>
+
+<footer>
+  <div class="flogo">MUBB</div>
+  <div class="rooms">Showroom Quito — Av. Orellana y González Suárez<br>Showroom Manta — Barbasquillo, Vía Umiña Tenis Club<br>Showroom Guayaquil — Moderna Plaza, Samborondón, Local 31</div>
+  <div class="fbottom">© 2026 MUBB. Todos los derechos reservados. · ventas@mubb.store</div>
+</footer>
+
+<script src="store.js"></script>
+<script>
+  const lines = cartLines();
+  if (!lines.length) location.href = 'carrito.html';
+
+  function shipCost(){
+    return parseInt(document.getElementById('entrega').value.split('|')[1], 10);
+  }
+  function renderSummary(){
+    const subtotal = cartTotal();
+    const ship = shipCost();
+    const total = subtotal + ship;
+    document.getElementById('summary').innerHTML = `
+      <h2 style="margin-top:0">Resumen del pedido</h2>
+      ${lines.map(l => `<div class="line"><span>${l.product.name} × ${l.qty}</span><span>${fmt(l.product.price * l.qty)}</span></div>`).join('')}
+      <div class="line" style="margin-top:10px"><span>Subtotal</span><span>${fmt(subtotal)}</span></div>
+      <div class="line"><span>Envío</span><span>${ship === 0 ? 'Gratis' : fmt(ship)}</span></div>
+      <div class="line total"><span>Total</span><span>${fmt(total)}</span></div>
+    `;
+    document.getElementById('submitTotal').textContent = fmt(total);
+  }
+  document.getElementById('entrega').addEventListener('change', renderSummary);
+  renderSummary();
+
+  document.getElementById('coForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const f = e.target;
+    const [zona] = f.entrega.value.split('|');
+    const items = lines.map(l => `- ${l.product.name} x${l.qty}: ${fmt(l.product.price * l.qty)}`).join('\n');
+    const total = cartTotal() + shipCost();
+    const msg = encodeURIComponent(
+`Hola MUBB, quiero confirmar este pedido:
+${items}
+Envío: ${zona === 'pickup' ? 'Retiro en showroom' : 'Domicilio - ' + zona}
+Total: ${fmt(total)}
+
+Nombre: ${f.nombre.value}
+Correo: ${f.email.value}
+Teléfono: ${f.telefono.value}
+Documento: ${f.doctipo.value} ${f.docnum.value}
+Dirección: ${f.direccion.value || '-'}
+Método de pago preferido: ${f.pago.value}`
+    );
+    localStorage.removeItem('mubb_cart');
+    window.open(`https://wa.me/593939394576?text=${msg}`, '_blank');
+    location.href = 'pedido-recibido.html';
+  });
+</script>
+</body></html>

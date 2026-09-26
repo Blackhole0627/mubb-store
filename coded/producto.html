@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title id="pgTitle">Producto — MUBB</title>
+<link rel="stylesheet" href="styles.css">
+</head><body>
+
+<header>
+  <div class="topbar">
+    <a href="https://mubb.store/"><img src="img/logo.png" alt="MUBB"></a>
+    <nav class="main">
+      <a href="https://mubb.store/">Inicio</a>
+      <a href="https://mubb.store/catalogo/">Productos</a>
+      <a href="https://mubb.store/sobre-nosotros/">Sobre nosotros</a>
+      <a href="https://mubb.store/ubicaciones/">Ubicaciones</a>
+      <a href="index.html" class="on">Tienda</a>
+    </nav>
+    <div class="hd-right">
+      <span>ESP</span>
+      <a class="cart-link" href="carrito.html">🛒 <span class="cart-count">0</span></a>
+    </div>
+  </div>
+</header>
+
+<div id="pdp"></div>
+
+<footer>
+  <div class="flogo">MUBB</div>
+  <div class="rooms">Showroom Quito — Av. Orellana y González Suárez<br>Showroom Manta — Barbasquillo, Vía Umiña Tenis Club<br>Showroom Guayaquil — Moderna Plaza, Samborondón, Local 31</div>
+  <div class="fbottom">© 2026 MUBB. Todos los derechos reservados. · ventas@mubb.store</div>
+</footer>
+
+<script src="store.js"></script>
+<script>
+  const id = new URLSearchParams(location.search).get('id');
+  const p = getProduct(id) || PRODUCTS[0];
+  document.getElementById('pgTitle').textContent = p.name + ' — MUBB';
+  let qty = 1;
+
+  document.getElementById('pdp').innerHTML = `
+    <div class="pdp">
+      <div class="gallery"><img src="${p.img}" alt="${p.name}"></div>
+      <div>
+        <div class="crumb"><a href="index.html">Tienda</a> / ${p.cat}</div>
+        <div class="cat">${p.cat}</div>
+        <h1>${p.name}</h1>
+        <div class="price">${fmt(p.price)}</div>
+        <div class="stock ${p.stock <= 2 ? 'low' : ''}">● En stock — ${p.stock} disponible${p.stock === 1 ? '' : 's'}</div>
+        <p class="desc">${p.desc}</p>
+        <div class="qtybox">
+          <button id="qMinus">−</button><span id="qVal">1</span><button id="qPlus">+</button>
+        </div>
+        <button class="addbtn" id="addBtn">Agregar al carrito</button>
+        <div class="ship">Envío a Quito, Manta y Guayaquil desde $ 40 · Retiro gratuito en showroom</div>
+        <div class="accordion">
+          <div class="acc-item"><button data-a>Materiales<span>+</span></button><div class="body">${p.materials}</div></div>
+          <div class="acc-item"><button data-a>Dimensiones<span>+</span></button><div class="body">${p.dims}</div></div>
+          <div class="acc-item"><button data-a>Cuidado<span>+</span></button><div class="body">Limpiar con paño seco. Evitar exposición directa al sol prolongada. Para tapizados en tela, aspirar semanalmente.</div></div>
+        </div>
+      </div>
+    </div>
+  `;
+
+  document.getElementById('qMinus').onclick = () => { qty = Math.max(1, qty - 1); document.getElementById('qVal').textContent = qty; };
+  document.getElementById('qPlus').onclick = () => { qty = Math.min(p.stock, qty + 1); document.getElementById('qVal').textContent = qty; };
+  document.getElementById('addBtn').onclick = function(){ addToCart(p.id, qty); this.textContent = 'Agregado ✓'; setTimeout(()=> this.textContent = 'Agregar al carrito', 1400); };
+  document.querySelectorAll('[data-a]').forEach(btn => btn.onclick = () => btn.parentElement.classList.toggle('open'));
+</script>
+</body></html>

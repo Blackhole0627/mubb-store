@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Carrito — MUBB</title>
+<link rel="stylesheet" href="styles.css">
+</head><body>
+
+<header>
+  <div class="topbar">
+    <a href="https://mubb.store/"><img src="img/logo.png" alt="MUBB"></a>
+    <nav class="main">
+      <a href="https://mubb.store/">Inicio</a>
+      <a href="https://mubb.store/catalogo/">Productos</a>
+      <a href="index.html" class="on">Tienda</a>
+    </nav>
+    <div class="hd-right">
+      <span>ESP</span>
+      <a class="cart-link" href="carrito.html">🛒 <span class="cart-count">0</span></a>
+    </div>
+  </div>
+</header>
+
+<div class="cart-wrap">
+  <h1>Tu carrito</h1>
+  <div id="lines"></div>
+  <div id="summaryBox"></div>
+</div>
+
+<footer>
+  <div class="flogo">MUBB</div>
+  <div class="rooms">Showroom Quito — Av. Orellana y González Suárez<br>Showroom Manta — Barbasquillo, Vía Umiña Tenis Club<br>Showroom Guayaquil — Moderna Plaza, Samborondón, Local 31</div>
+  <div class="fbottom">© 2026 MUBB. Todos los derechos reservados. · ventas@mubb.store</div>
+</footer>
+
+<script src="store.js"></script>
+<script>
+  function render(){
+    const lines = cartLines();
+    const linesEl = document.getElementById('lines');
+    const summaryEl = document.getElementById('summaryBox');
+    if (!lines.length){
+      linesEl.innerHTML = '<div class="empty-cart">Tu carrito está vacío.<br><br><a href="index.html" style="color:#000;text-decoration:underline">Ver productos</a></div>';
+      summaryEl.innerHTML = '';
+      return;
+    }
+    linesEl.innerHTML = lines.map(l => `
+      <div class="citem">
+        <img src="${l.product.img}" alt="${l.product.name}">
+        <div>
+          <div class="name">${l.product.name}</div>
+          <div style="font-size:11px;color:#888">${l.product.cat}</div>
+          <button class="rm" onclick="removeFromCart('${l.id}');render()">Quitar</button>
+        </div>
+        <div class="qtybox">
+          <button onclick="setQty('${l.id}', ${l.qty - 1});render()">−</button>
+          <span>${l.qty}</span>
+          <button onclick="setQty('${l.id}', ${l.qty + 1});render()">+</button>
+        </div>
+        <div class="price">${fmt(l.product.price * l.qty)}</div>
+      </div>
+    `).join('');
+    const subtotal = cartTotal();
+    summaryEl.innerHTML = `
+      <div class="summary">
+        <div class="row"><span>Subtotal</span><span>${fmt(subtotal)}</span></div>
+        <div class="row"><span>Envío</span><span>Se calcula en el checkout</span></div>
+        <div class="row total"><span>Total</span><span>${fmt(subtotal)}</span></div>
+        <a href="checkout.html" style="display:block;text-align:center;background:#000;color:#fff;padding:15px;margin-top:18px;text-decoration:none;font-size:12px;letter-spacing:.1em;text-transform:uppercase">Ir a checkout</a>
+      </div>
+    `;
+  }
+  render();
+</script>
+</body></html>
