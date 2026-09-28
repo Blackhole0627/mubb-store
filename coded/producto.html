@@ -18,6 +18,7 @@
       <span>ESP</span>
       <a class="cart-link" href="carrito.html">🛒 <span class="cart-count">0</span></a>
     </div>
+    <button class="hbtn" id="hbtn" aria-label="Menú">☰</button>
   </div>
 </header>
 
@@ -64,5 +65,36 @@
   document.getElementById('qPlus').onclick = () => { qty = Math.min(p.stock, qty + 1); document.getElementById('qVal').textContent = qty; };
   document.getElementById('addBtn').onclick = function(){ addToCart(p.id, qty); this.textContent = 'Agregado ✓'; setTimeout(()=> this.textContent = 'Agregar al carrito', 1400); };
   document.querySelectorAll('[data-a]').forEach(btn => btn.onclick = () => btn.parentElement.classList.toggle('open'));
+</script>
+<script>
+  const hbtn = document.getElementById('hbtn');
+  const mnav = document.querySelector('nav.main');
+  if (hbtn && mnav) {
+    let scrollLockY = 0;
+    function setLock(on){
+      if (on) {
+        scrollLockY = window.scrollY;
+        document.documentElement.style.overflow = 'hidden';
+        document.body.style.position = 'fixed';
+        document.body.style.top = (-scrollLockY) + 'px';
+        document.body.style.width = '100%';
+      } else {
+        document.documentElement.style.overflow = '';
+        document.body.style.position = '';
+        document.body.style.top = '';
+        document.body.style.width = '';
+        window.scrollTo(0, scrollLockY);
+      }
+    }
+    function closeMnav(){ mnav.classList.remove('open'); hbtn.classList.remove('open'); hbtn.textContent = '☰'; setLock(false); }
+    hbtn.onclick = () => {
+      const willOpen = !mnav.classList.contains('open');
+      mnav.classList.toggle('open', willOpen);
+      hbtn.classList.toggle('open', willOpen);
+      hbtn.textContent = willOpen ? '✕' : '☰';
+      setLock(willOpen);
+    };
+    mnav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMnav));
+  }
 </script>
 </body></html>
