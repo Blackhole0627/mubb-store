@@ -6,15 +6,22 @@
 
 <header>
   <div class="topbar">
-    <a href="https://mubb.store/"><img src="img/logo.png" alt="MUBB"></a>
+    <a class="logo" href="https://mubb.store/"><img src="img/logo.png" alt="MUBB"></a>
     <nav class="main">
       <a href="https://mubb.store/">Inicio</a>
       <a href="https://mubb.store/catalogo/">Productos</a>
+      <a href="https://mubb.store/sobre-nosotros/">Sobre nosotros</a>
+      <a href="https://mubb.store/ubicaciones/">Ubicaciones</a>
+      <a href="https://mubb-design-v2.vercel.app/">MUBB Design</a>
       <a href="index.html" class="on">Tienda</a>
     </nav>
     <div class="hd-right">
-      <span>ESP</span>
-      <a class="cart-link" href="carrito.html">🛒 <span class="cart-count">0</span></a>
+      <a class="cart-link" href="carrito.html" aria-label="Carrito">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h3l2.4 11.2a1.5 1.5 0 0 0 1.5 1.2h8.7a1.5 1.5 0 0 0 1.5-1.1L21 7H6"/><circle cx="9.5" cy="20" r="1.2"/><circle cx="17" cy="20" r="1.2"/></svg>
+        <span class="cart-count">0</span>
+      </a>
+      <a class="hd-text" href="mailto:ventas@mubb.store">Contacto</a>
+      <span class="lang"><b>ESP</b> ENG</span>
     </div>
     <button class="hbtn" id="hbtn" aria-label="Menú">☰</button>
   </div>
@@ -27,9 +34,20 @@
 </div>
 
 <footer>
-  <div class="flogo">MUBB</div>
-  <div class="rooms">Showroom Quito — Av. Orellana y González Suárez<br>Showroom Manta — Barbasquillo, Vía Umiña Tenis Club<br>Showroom Guayaquil — Moderna Plaza, Samborondón, Local 31</div>
-  <div class="fbottom">© 2026 MUBB. Todos los derechos reservados. · ventas@mubb.store</div>
+  <div class="fwrap">
+    <h2 class="ftitle">Forma parte de la filosofía MUBB</h2>
+    <div class="fcols">
+      <div class="rooms">
+        <p><b>Showroom Quito</b>Av. Orellana y González Suárez</p>
+        <p><b>Showroom Manta</b>Barbasquillo – Vía Umiña Tenis Club</p>
+        <p><b>Showroom Guayaquil</b>Samborondón – Moderna Plaza – Local 31</p>
+      </div>
+      <a class="flink big" href="https://mubb.store/terminos-y-condiciones/">Términos y condiciones</a>
+      <a class="flink" href="https://mubb.store/mubb-society/">MUBB Society</a>
+      <div class="fcontact">Contáctanos<br><a href="mailto:ventas@mubb.store">Email: ventas@mubb.store</a></div>
+    </div>
+    <div class="fbottom">© MUBB 2026. All rights reserved.</div>
+  </div>
 </footer>
 
 <script src="store.js"></script>

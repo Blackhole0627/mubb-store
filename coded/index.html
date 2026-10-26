@@ -5,54 +5,109 @@
 <link rel="stylesheet" href="styles.css">
 </head><body>
 
-<div class="banner">Nuevo · Tienda MUBB — piezas disponibles para compra inmediata</div>
 <header>
   <div class="topbar">
-    <a href="https://mubb.store/"><img src="img/logo.png" alt="MUBB"></a>
+    <a class="logo" href="https://mubb.store/"><img src="img/logo.png" alt="MUBB"></a>
     <nav class="main">
       <a href="https://mubb.store/">Inicio</a>
       <a href="https://mubb.store/catalogo/">Productos</a>
       <a href="https://mubb.store/sobre-nosotros/">Sobre nosotros</a>
       <a href="https://mubb.store/ubicaciones/">Ubicaciones</a>
+      <a href="https://mubb-design-v2.vercel.app/">MUBB Design</a>
       <a href="index.html" class="on">Tienda</a>
     </nav>
     <div class="hd-right">
-      <span>ESP</span>
-      <a class="cart-link" href="carrito.html">🛒 <span class="cart-count">0</span></a>
+      <a class="cart-link" href="carrito.html" aria-label="Carrito">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h3l2.4 11.2a1.5 1.5 0 0 0 1.5 1.2h8.7a1.5 1.5 0 0 0 1.5-1.1L21 7H6"/><circle cx="9.5" cy="20" r="1.2"/><circle cx="17" cy="20" r="1.2"/></svg>
+        <span class="cart-count">0</span>
+      </a>
+      <a class="hd-text" href="mailto:ventas@mubb.store">Contacto</a>
+      <span class="lang"><b>ESP</b> ENG</span>
     </div>
     <button class="hbtn" id="hbtn" aria-label="Menú">☰</button>
   </div>
 </header>
 
-<section class="subhero">
-  <h1>La tienda MUBB</h1>
-  <p>Piezas seleccionadas, disponibles en stock para entrega inmediata</p>
+<section class="pbanner">
+  <img src="img/banner-tienda.jpg" alt="Mesa Expression en madera, MUBB">
+  <div class="pbanner-text">
+    <p class="kicker">Piezas disponibles para entrega inmediata</p>
+    <h1>Tienda MUBB</h1>
+  </div>
 </section>
 
-<section class="cat">
+<section class="shop">
+  <aside class="side" aria-label="Categorías">
+    <button class="side-cat on" data-cat="">Todo</button>
+    <div class="side-group">
+      <button class="side-cat" data-cat="Salas">Salas</button>
+      <button class="side-sub" data-cat="Salas › Sofás">Sofás</button>
+      <button class="side-sub" data-cat="Salas › Consolas">Consolas</button>
+      <button class="side-sub" data-cat="Salas › Poltronas">Poltronas</button>
+    </div>
+    <div class="side-group">
+      <button class="side-cat" data-cat="Comedores">Comedores</button>
+      <button class="side-sub" data-cat="Comedores › Mesas">Mesas</button>
+    </div>
+  </aside>
   <div class="pgrid" id="grid"></div>
+</section>
+
+<section class="mat">
+  <div class="mat-collage">
+    <img class="m1" src="img/mat-1.jpg" alt="Mármol y metal">
+    <img class="m2" src="img/mat-2.jpg" alt="Piel genuina">
+    <img class="m3" src="img/mat-3.jpg" alt="Acabados metálicos">
+  </div>
+  <div class="mat-text">
+    <p class="mat-pre">Personaliza tu pieza con</p>
+    <h2>Materiales exclusivos</h2>
+    <p class="mat-sub">Conoce las opciones disponibles<br><b>en piel, telas, maderas y más</b></p>
+    <div class="swatches">
+      <img src="img/sw-gold.jpg" alt="Elegant Gold"><img src="img/sw-galaxy.jpg" alt="Galaxy Black"><img src="img/sw-cinnamon.jpg" alt="RA Cinnamon"><img src="img/sw-chocolatte.jpg" alt="Luxxo Chocolatte"><img src="img/sw-realty.jpg" alt="Realty White"><img src="img/sw-wengue.jpg" alt="Wengue Oscuro">
+    </div>
+  </div>
 </section>
 
 <p class="note-box">Vista previa funcional: el carrito y las cantidades funcionan de verdad (con almacenamiento local del navegador). Los precios y el stock son ilustrativos hasta confirmar el catálogo real. El pago con Datafast/Kushki se conecta en la Etapa 3, junto con las credenciales del banco.</p>
 
 <footer>
-  <div class="flogo">MUBB</div>
-  <div class="rooms">Showroom Quito — Av. Orellana y González Suárez<br>Showroom Manta — Barbasquillo, Vía Umiña Tenis Club<br>Showroom Guayaquil — Moderna Plaza, Samborondón, Local 31</div>
-  <div class="fbottom">© 2026 MUBB. Todos los derechos reservados. · ventas@mubb.store</div>
+  <div class="fwrap">
+    <h2 class="ftitle">Forma parte de la filosofía MUBB</h2>
+    <div class="fcols">
+      <div class="rooms">
+        <p><b>Showroom Quito</b>Av. Orellana y González Suárez</p>
+        <p><b>Showroom Manta</b>Barbasquillo – Vía Umiña Tenis Club</p>
+        <p><b>Showroom Guayaquil</b>Samborondón – Moderna Plaza – Local 31</p>
+      </div>
+      <a class="flink big" href="https://mubb.store/terminos-y-condiciones/">Términos y condiciones</a>
+      <a class="flink" href="https://mubb.store/mubb-society/">MUBB Society</a>
+      <div class="fcontact">Contáctanos<br><a href="mailto:ventas@mubb.store">Email: ventas@mubb.store</a></div>
+    </div>
+    <div class="fbottom">© MUBB 2026. All rights reserved.</div>
+  </div>
 </footer>
 
 <script src="store.js"></script>
 <script>
   const grid = document.getElementById('grid');
-  grid.innerHTML = PRODUCTS.map(p => `
-    <div class="pcard">
-      <a class="imgwrap" href="producto.html?id=${p.id}"><img src="${p.img}" alt="${p.name}"></a>
-      <div class="cat">${p.cat}</div>
-      <div class="name"><a href="producto.html?id=${p.id}" style="text-decoration:none;color:inherit">${p.name}</a></div>
-      <div class="price">${fmt(p.price)}</div>
-      <button onclick="addToCart('${p.id}',1); this.textContent='Agregado ✓'; setTimeout(()=>this.textContent='Agregar al carrito',1400)">Agregar al carrito</button>
-    </div>
-  `).join('');
+  function render(cat){
+    const list = cat ? PRODUCTS.filter(p => p.cat === cat || p.cat.startsWith(cat + ' ›')) : PRODUCTS;
+    grid.innerHTML = list.map(p => `
+      <div class="pcard">
+        <a class="imgwrap" href="producto.html?id=${p.id}"><img src="${p.img}" alt="${p.name}" loading="lazy"></a>
+        <div class="cat">${p.cat.split(' › ').pop()}</div>
+        <div class="name"><a href="producto.html?id=${p.id}">${p.name}</a></div>
+        <div class="price">${fmt(p.price)}</div>
+        <button onclick="addToCart('${p.id}',1); this.textContent='Agregado ✓'; setTimeout(()=>this.textContent='Agregar al carrito',1400)">Agregar al carrito</button>
+      </div>
+    `).join('');
+  }
+  document.querySelectorAll('.side [data-cat]').forEach(b => b.onclick = () => {
+    document.querySelectorAll('.side [data-cat]').forEach(x => x.classList.toggle('on', x === b));
+    render(b.dataset.cat);
+  });
+  render('');
 </script>
 <script>
   const hbtn = document.getElementById('hbtn');
